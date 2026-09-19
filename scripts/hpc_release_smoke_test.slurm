@@ -60,6 +60,10 @@ else
   "$env_manager" env create --prefix "$env_prefix" --file environment.yml
 fi
 
+# Snakemake rules execute in child shells. Export the selected environment so
+# the APAmiRank CLI and pinned RNAhybrid/RNAup executables remain discoverable.
+export PATH="$env_prefix/bin:$PATH"
+
 cp config/config.thermodynamic.example.yaml "$run_dir/config.thermodynamic.yaml"
 "$env_prefix/bin/python" - "$run_dir/config.thermodynamic.yaml" "$results_dir" "$repo_root/config" <<'PY'
 from pathlib import Path
