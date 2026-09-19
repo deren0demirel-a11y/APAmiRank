@@ -200,12 +200,11 @@ resolve the 57.1% coverage limitation.
 
 A manuscript-ready synthesis of the validation methods, results, figure
 legend, limitations, and permitted claim boundary is provided in
-[`manuscript/VALIDATION_METHODS_RESULTS.md`](manuscript/VALIDATION_METHODS_RESULTS.md),
-with a styled Word edition in the same directory.
+[`manuscript/VALIDATION_METHODS_RESULTS.md`](manuscript/VALIDATION_METHODS_RESULTS.md).
 
 ## Citation and release status
 
 This is version 0.2.18, a research-validation release candidate. Complete the items in
 [`docs/PUBLIC_RELEASE_CHECKLIST.md`](docs/PUBLIC_RELEASE_CHECKLIST.md) before a
-public release. In particular, an open-source license has not been selected;
-no license is granted by this draft package.
+public release. APAmiRank is distributed under the BSD 3-Clause License; see
+[`LICENSE`](LICENSE).
