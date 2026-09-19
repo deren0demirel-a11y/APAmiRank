@@ -76,6 +76,10 @@ snakemake --snakefile workflow/Snakefile \
   --cores 4
 ```
 
+Before a public release, the pinned RNAhybrid/RNAup and Snakemake integration
+can be verified on a SLURM cluster with the fail-closed procedure in
+[`docs/HPC_RELEASE_SMOKE_TEST.md`](docs/HPC_RELEASE_SMOKE_TEST.md).
+
 The example uses an artificial miRNA rather than miR-548ah-3p and includes
 plus- and minus-strand loci, demonstrating that seed generation and coordinate
 mapping are parameterized.
@@ -155,8 +159,8 @@ pytest -q
 
 Tests verify generic seed construction, plus/minus-strand site mapping,
 common/distal availability, strict isoform-usage validation, condition-specific
-site exposure, post hoc rank preservation, and a complete architecture-mode
-run.
+site exposure, post hoc rank preservation, a complete architecture-mode run,
+and inclusion of thermodynamic evidence in the checksummed run manifest.
 
 The checks performed for this packaged release candidate are recorded in
 [`docs/VERIFICATION.md`](docs/VERIFICATION.md).

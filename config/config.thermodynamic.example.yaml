@@ -1,0 +1,29 @@
+miRNA:
+  id: hsa-miR-example
+  sequence: AUGCAUGCAUGCAUGCAUGCAU
+
+input:
+  isoform_metadata: ../examples/minimal/isoforms.tsv
+  isoform_fasta: ../examples/minimal/isoforms.fa
+  isoform_usage: ../examples/minimal/isoform_usage.tsv
+  eligible_genes: null
+  external_site_annotations: null
+  posthoc_gene_annotations: ../examples/minimal/posthoc_genes.tsv
+  # Null deliberately exercises the pinned RNAhybrid and RNAup executables.
+  thermodynamic_evidence: null
+
+output_dir: ../results/thermodynamic_example_run
+flank_nt: 50
+usage_sum_tolerance: 0.02
+
+scoring:
+  mode: thermodynamic
+  bootstrap_iterations: 250
+  opportunity_iterations: 1000
+  random_seed: 20260901
+
+thermodynamics:
+  rnahybrid_executable: RNAhybrid
+  rnaup_executable: RNAup
+  threads: 4
+  strict: true

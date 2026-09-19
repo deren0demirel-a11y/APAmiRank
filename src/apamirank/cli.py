@@ -63,6 +63,7 @@ def run_config(config_path):
                                rnahybrid=tools.get("rnahybrid_executable", "RNAhybrid"),
                                rnaup=tools.get("rnaup_executable", "RNAup"),
                                threads=int(tools.get("threads", 1)), strict=bool(tools.get("strict", True)))
+        paths["thermodynamic_evidence"] = evidence
         scoring_input = evidence
     else:
         scoring_input = paths["sites"]

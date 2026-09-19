@@ -41,19 +41,21 @@ The following checks passed in the packaging environment:
 - Holm adjustment of the four secondary ranking-enrichment metrics;
 - complete-miRNA-cluster bootstrap and publication-figure generation.
 
-Thirty-three pytest tests passed in the v0.2.18 development environment. The packaging
+Thirty-four pytest tests passed in the v0.2.18 development environment. The packaging
 environment did not contain RNAhybrid, RNAup, or Snakemake executables.
 Consequently, the external-binary thermodynamic execution and Snakemake entry
 point were not run here. Their parsers, scoring path, pinned Conda dependencies,
-and GitHub Actions workflow are included. Before a public release, create the
-provided Conda environment and run:
+GitHub Actions workflow, and a fail-closed SLURM release-smoke-test procedure
+are included. Before a public release, run the cluster procedure documented in
+`docs/HPC_RELEASE_SMOKE_TEST.md`. The essential submission command is:
 
 ```bash
-pytest -q
-snakemake --snakefile workflow/Snakefile \
-  --configfile config/config.example.yaml \
-  --cores 4
+sbatch scripts/hpc_release_smoke_test.slurm
 ```
+
+The verification record must not be amended to claim external-binary execution
+until the generated `validation_report.json` reports `PASS` and the complete
+time-stamped run directory has been retained.
 
 The included example intentionally uses a synthetic miRNA and synthetic loci;
 it is a software test and has no biological interpretation.
