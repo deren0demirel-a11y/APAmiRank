@@ -1,0 +1,39 @@
+configfile: "config/config.example.yaml"
+
+from pathlib import Path
+
+CONFIG = Path(workflow.configfiles[0]).resolve()
+OUT = Path(config["output_dir"])
+if not OUT.is_absolute():
+    OUT = (CONFIG.parent / OUT).resolve()
+
+FINAL_SITE = str(OUT / "04_site_ranking_annotated.tsv")
+FINAL_GENE = str(OUT / "04_gene_ranking_annotated.tsv")
+MANIFEST = str(OUT / "run_manifest.json")
+CONDITION_OUTPUTS = []
+if config.get("input", {}).get("isoform_usage"):
+    CONDITION_OUTPUTS = [
+        str(OUT / "03b_condition_site_ranking.tsv"),
+        str(OUT / "03c_condition_gene_ranking.tsv"),
+        str(OUT / "03d_condition_gene_contrasts.tsv"),
+    ]
+
+
+rule all:
+    input:
+        FINAL_SITE,
+        FINAL_GENE,
+        MANIFEST,
+        CONDITION_OUTPUTS
+
+
+rule apamirank:
+    input:
+        config=str(CONFIG)
+    output:
+        FINAL_SITE,
+        FINAL_GENE,
+        MANIFEST,
+        CONDITION_OUTPUTS
+    shell:
+        "apamirank run --config {input.config}"

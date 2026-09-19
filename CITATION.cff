@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use APAmiRank, please cite this software and the associated manuscript when available."
+title: "APAmiRank: Alternative Polyadenylation-aware miRNA Target Ranking"
+type: software
+version: 0.2.18
+authors:
+  - family-names: "Demirel Yavuz"
+    given-names: "Deren"
+repository-code: "https://github.com/deren0demirel-a11y/APAmiRank"
+license: "NOASSERTION"

@@ -1,0 +1,9 @@
+isoform_id	condition	usage_fraction
+GENEA_I1	proximal_context	0.90
+GENEA_I2	proximal_context	0.10
+GENEB_I1	proximal_context	0.80
+GENEB_I2	proximal_context	0.20
+GENEA_I1	distal_context	0.15
+GENEA_I2	distal_context	0.85
+GENEB_I1	distal_context	0.20
+GENEB_I2	distal_context	0.80

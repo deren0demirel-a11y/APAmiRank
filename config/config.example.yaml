@@ -1,0 +1,35 @@
+miRNA:
+  id: hsa-miR-example
+  sequence: AUGCAUGCAUGCAUGCAUGCAU
+
+input:
+  isoform_metadata: ../examples/minimal/isoforms.tsv
+  isoform_fasta: ../examples/minimal/isoforms.fa
+  # Optional long-form condition-specific usage table. When supplied,
+  # APAmiRank produces exposure-weighted site, gene, and contrast outputs.
+  isoform_usage: ../examples/minimal/isoform_usage.tsv
+  eligible_genes: null
+  # Optional annotations are joined only after primary ranks are fixed.
+  external_site_annotations: null
+  posthoc_gene_annotations: ../examples/minimal/posthoc_genes.tsv
+  # Supply a complete site-level evidence TSV here to score a previously
+  # computed thermodynamic run. Leave null to let APAmiRank run the tools.
+  thermodynamic_evidence: null
+
+output_dir: ../results/example_run
+flank_nt: 50
+usage_sum_tolerance: 0.02
+
+scoring:
+  # architecture = canonical seed class + local AU context
+  # thermodynamic = the verified seven-feature RNAhybrid/RNAup model
+  mode: architecture
+  bootstrap_iterations: 250
+  opportunity_iterations: 1000
+  random_seed: 20260901
+
+thermodynamics:
+  rnahybrid_executable: RNAhybrid
+  rnaup_executable: RNAup
+  threads: 4
+  strict: true

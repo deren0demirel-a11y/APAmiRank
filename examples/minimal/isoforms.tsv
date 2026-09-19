@@ -1,0 +1,5 @@
+isoform_id	gene	locus_id	pas_rank	chrom	start0	end	strand
+GENEA_I1	GENEA	GENEA_L1	1	chrSynthetic	100	120	+
+GENEA_I2	GENEA	GENEA_L1	2	chrSynthetic	100	130	+
+GENEB_I1	GENEB	GENEB_L1	1	chrSynthetic	500	520	-
+GENEB_I2	GENEB	GENEB_L1	2	chrSynthetic	490	520	-

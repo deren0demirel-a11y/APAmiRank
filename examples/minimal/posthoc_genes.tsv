@@ -1,0 +1,2 @@
+gene	contrast	log2FoldChange	padj
+GENEA	treatment_vs_control	-1.25	0.004

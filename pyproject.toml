@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apamirank"
+version = "0.2.18"
+description = "Alternative polyadenylation-aware miRNA target ranking"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Deren Demirel Yavuz"}]
+dependencies = ["PyYAML>=6.0", "pyfaidx>=0.8"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+workflow = ["snakemake-minimal>=8"]
+benchmark = ["numpy>=2.0", "scipy>=1.14", "pandas>=2.2", "openpyxl>=3.1", "matplotlib>=3.9"]
+
+[project.scripts]
+apamirank = "apamirank.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,3 @@
+scope	source_pairs	observable_pairs	candidate_coverage	mean_apa_percentile	median_apa_percentile	top_decile_pairs	top_decile_fraction	top_quintile_pairs	top_quintile_fraction	median_apa_minus_unweighted_percentile	inferential_test
+full_text_strict	4	4	1.0	0.9673368923025927	0.9733360593252035	4	1.0	4	1.0	0.007872663287531612	not_run_post_selection_small_n
+plus_construct_corroborated	5	5	1.0	0.9668437527179524	0.9648711943793912	5	1.0	5	1.0	0.028120713305898604	not_run_post_selection_small_n

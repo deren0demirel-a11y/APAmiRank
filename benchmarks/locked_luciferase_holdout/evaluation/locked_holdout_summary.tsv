@@ -1,0 +1,2 @@
+selected_pairs	strict_included_pairs	observable_pairs	candidate_coverage	mean_apa_percentile	median_apa_percentile	top_decile_fraction	top_quintile_fraction	median_apa_minus_unweighted_percentile
+33	21	12	0.5714285714285714	0.7846960391750062	0.8185061929628623	0.3333333333333333	0.5833333333333334	0.06512716329762358

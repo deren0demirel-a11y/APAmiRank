@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.DS_Store
+.snakemake/
+results/
+benchmarks/*/raw/*
+!benchmarks/*/raw/SHA256SUMS
+!benchmarks/*/raw/README.md
+benchmarks/*/derived/
+tmp/
+dist/
+build/
+*.egg-info/
+config/config.local.yaml
